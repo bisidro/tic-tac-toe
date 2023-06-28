@@ -9,17 +9,22 @@ interface BoardProps {
 
 const Board = React.memo(({ xIsNext, squares, onPlay }: BoardProps) => {
   function handleClick(i: any) {
-    if (calculateWinner(squares) || squares[i]) {
-      return;
+    try {
+        if (calculateWinner(squares) || squares[i]) {
+          return;
+        }
+        const nextSquares = squares.slice();
+        if (xIsNext) {
+          nextSquares[i] = 'X';
+        } else {
+          nextSquares[i] = 'O';
+        }
+        onPlay(nextSquares);
+      } catch (error) {
+        // Handle the error here
+        console.error('An error occurred:', error);
+      }
     }
-    const nextSquares = squares.slice();
-    if (xIsNext) {
-      nextSquares[i] = 'X';
-    } else {
-      nextSquares[i] = 'O';
-    }
-    onPlay(nextSquares);
-  }
 
   const winner = calculateWinner(squares);
   let status;

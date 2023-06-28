@@ -36,21 +36,21 @@ const Board = React.memo(({ xIsNext, squares, onPlay }: BoardProps) => {
 
   return (
     <>
-      <div className="status">{status}</div>
-      <div className="board-row">
-        <Square value={squares[0]} onSquareClick={() => handleClick(0)} />
-        <Square value={squares[1]} onSquareClick={() => handleClick(1)} />
-        <Square value={squares[2]} onSquareClick={() => handleClick(2)} />
+      <div className="status" aria-label="Game Board" aria-live="polite">{status}</div>
+      <div className="board-row" tabIndex={0} role="grid">
+        <Square value={squares[0]} onSquareClick={() => handleClick(0)} role="gridcell" />
+        <Square value={squares[1]} onSquareClick={() => handleClick(1)} role="gridcell" />
+        <Square value={squares[2]} onSquareClick={() => handleClick(2)} role="gridcell" />
       </div>
-      <div className="board-row">
-        <Square value={squares[3]} onSquareClick={() => handleClick(3)} />
-        <Square value={squares[4]} onSquareClick={() => handleClick(4)} />
-        <Square value={squares[5]} onSquareClick={() => handleClick(5)} />
+      <div className="board-row" tabIndex={0} role="grid">
+        <Square value={squares[3]} onSquareClick={() => handleClick(3)} role="gridcell" />
+        <Square value={squares[4]} onSquareClick={() => handleClick(4)} role="gridcell" />
+        <Square value={squares[5]} onSquareClick={() => handleClick(5)} role="gridcell" />
       </div>
-      <div className="board-row">
-        <Square value={squares[6]} onSquareClick={() => handleClick(6)} />
-        <Square value={squares[7]} onSquareClick={() => handleClick(7)} />
-        <Square value={squares[8]} onSquareClick={() => handleClick(8)} />
+      <div className="board-row" tabIndex={0} role="grid">
+        <Square value={squares[6]} onSquareClick={() => handleClick(6)} role="gridcell" />
+        <Square value={squares[7]} onSquareClick={() => handleClick(7)} role="gridcell" />
+        <Square value={squares[8]} onSquareClick={() => handleClick(8)} role="gridcell" />
       </div>
     </>
   );

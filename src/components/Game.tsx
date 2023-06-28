@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import Board from './Board';
 
 function Game() {
@@ -13,9 +13,9 @@ function Game() {
     setCurrentMove(nextHistory.length - 1);
   }
   
-  function jumpTo(nextMove: any) {
+  const jumpTo = useCallback((nextMove: any) => {
     setCurrentMove(nextMove);
-  }
+  }, []);
 
   const moves = history.map((squares, move) => {
     let description;

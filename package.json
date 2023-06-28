@@ -3,12 +3,15 @@
     "react": "^18.0.0",
     "react-dom": "^18.0.0"
   },
-  "main": "/index.js",
+  "main": "/index.tsx",
   "devDependencies": {
-    "react-scripts": "^5.0.1"
+    "@types/react": "^18.2.14",
+    "@types/react-dom": "^18.2.6",
+    "react-scripts": "^5.0.1",
+    "typescript": "^5.1.5"
   },
   "name": "9st38q",
-  "description": null,
+  "description": "Tic Tac Toe with AI",
   "version": "0.0.0",
   "scripts": {
     "start": "react-scripts start",
